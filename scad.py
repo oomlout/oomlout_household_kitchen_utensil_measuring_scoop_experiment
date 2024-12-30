@@ -118,6 +118,7 @@ def get_base(thing, **kwargs):
     p3["m"] = "#"
     pos1 = copy.deepcopy(pos)
     pos1[0] += 38.4
+    pos1[2] += +depth
     p3["pos"] = pos1
     oobb_base.append_full(thing,**p3)
 
@@ -135,7 +136,7 @@ def get_base(thing, **kwargs):
     p3["m"] = "#"
     pos1 = copy.deepcopy(pos)
     pos1[0] += -24.25
-    pos1[2] += -depth
+    pos1[2] += 0
     p3["pos"] = pos1
     oobb_base.append_full(thing,**p3)
 

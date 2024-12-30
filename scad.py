@@ -17,7 +17,7 @@ def make_scad(**kwargs):
         #filter = "test"
 
         kwargs["save_type"] = "none"
-        #kwargs["save_type"] = "all"
+        kwargs["save_type"] = "all"
         
         navigation = False
         #navigation = True    
@@ -135,12 +135,13 @@ def get_base(thing, **kwargs):
     len_tsp = length_for_volume_mm(radius_tsp, 5)
     len_tbsp = length_for_volume_mm(radius_tbsp, 15)
     extra_base_tsp = 20
+    extra_base_tbsp = 5
     
     #add base tbsp
     p3 = copy.deepcopy(kwargs)
     p3["type"] = "p"
     p3["shape"] = f"rounded_rectangle"    
-    wid = len_tbsp + radius_tbsp*2 + thickness_wall + shift_scoop_out
+    wid = len_tbsp + radius_tbsp*2 + thickness_wall + shift_scoop_out + extra_base_tbsp
     hei = radius_tbsp*2 + thickness_wall * 2
     dep = radius_tbsp + depth_bottom
     size = [wid, hei, dep]
@@ -149,7 +150,7 @@ def get_base(thing, **kwargs):
     #p3["holes"] = True         uncomment to include default holes
     #p3["m"] = "#"
     pos1 = copy.deepcopy(pos)         
-    pos1[0] += -wid/2 
+    pos1[0] += -wid/2 + extra_base_tbsp
     p3["pos"] = pos1
     oobb_base.append_full(thing,**p3)
     
@@ -178,7 +179,7 @@ def get_base(thing, **kwargs):
     p3 = copy.deepcopy(kwargs)
     p3["type"] = "n"
     p3["shape"] = f"sphere_rectangle"
-    p3["shape"] = f"rounded_rectangle"
+    #p3["shape"] = f"rounded_rectangle"
     p3["radius"] = radius_tsp
     wid = radius_tsp*2 + len_tsp
     hei = radius_tsp*2

@@ -81,6 +81,40 @@ def make_scad(**kwargs):
         
         generate_navigation(sort = sort)
 
+import math
+
+def length_for_volume_mm(radius_mm, total_volume_ml):
+    """
+    Calculate the length of the cylinder required to achieve the specified volume
+    for a shape with two hemispheres and a cylinder.
+    
+    Args:
+        radius_mm (float): The radius of the spheres and the cylinder (in mm).
+        total_volume_ml (float): The target total volume of the shape (in mL).
+        
+    Returns:
+        float: The length of the cylindrical part (in mm).
+    """
+    # Convert radius from mm to cm
+    radius_cm = radius_mm * 0.1  # 1 mm = 0.1 cm
+    
+    # Volume of the two half-spheres (i.e., one full sphere)
+    sphere_volume_cm3 = (4 / 3) * math.pi * (radius_cm ** 3)
+    
+    # Remaining volume for the cylindrical part
+    cylinder_volume_cm3 = total_volume_ml - sphere_volume_cm3
+    
+    # If the cylinder_volume is less than 0, return 0 (impossible to achieve the volume)
+    if cylinder_volume_cm3 <= 0:
+        return 0
+    
+    # Length of the cylinder required in cm
+    cylinder_length_cm = cylinder_volume_cm3 / (math.pi * (radius_cm ** 2))
+    
+    # Convert the cylinder length from cm back to mm
+    cylinder_length_mm = cylinder_length_cm * 10  # 1 cm = 10 mm
+    
+    return cylinder_length_mm
 
 def get_base(thing, **kwargs):
 
@@ -93,50 +127,91 @@ def get_base(thing, **kwargs):
     #pos = copy.deepcopy(pos)
     #pos[2] += -20
 
-    #add base
+    radius_tbsp = 11
+    radius_tsp = 8
+    depth_bottom = 1.5
+    thickness_wall = 1
+    shift_scoop_out = 5
+    len_tsp = length_for_volume_mm(radius_tsp, 5)
+    len_tbsp = length_for_volume_mm(radius_tbsp, 15)
+    extra_base_tsp = 20
+    
+    #add base tbsp
     p3 = copy.deepcopy(kwargs)
     p3["type"] = "p"
     p3["shape"] = f"rounded_rectangle"    
-    wid = 104
-    hei = 29
-    dep = 12
+    wid = len_tbsp + radius_tbsp*2 + thickness_wall + shift_scoop_out
+    hei = radius_tbsp*2 + thickness_wall * 2
+    dep = radius_tbsp + depth_bottom
     size = [wid, hei, dep]
     p3["size"] = size
+    p3["radius"] = radius_tbsp + thickness_wall
     #p3["holes"] = True         uncomment to include default holes
     #p3["m"] = "#"
     pos1 = copy.deepcopy(pos)         
+    pos1[0] += -wid/2 
     p3["pos"] = pos1
     oobb_base.append_full(thing,**p3)
     
-    radius_tsp = 10.6
+    #add base tsp
+    p3 = copy.deepcopy(kwargs)
+    p3["type"] = "p"
+    p3["shape"] = f"rounded_rectangle"    
+    wid = len_tsp + radius_tsp*2 + thickness_wall + shift_scoop_out + extra_base_tsp
+    hei = radius_tsp*2 + thickness_wall * 2
+    dep = radius_tsp + depth_bottom
+    size = [wid, hei, dep]
+    p3["size"] = size
+    p3["radius"] = radius_tsp + thickness_wall
+    #p3["holes"] = True         uncomment to include default holes
+    #p3["m"] = "#"
+    pos1 = copy.deepcopy(pos)         
+    pos1[0] += wid/2 - extra_base_tsp
+    p3["pos"] = pos1
+    oobb_base.append_full(thing,**p3)
+    
 
+    
+
+    
     #add tsp sphere
     p3 = copy.deepcopy(kwargs)
     p3["type"] = "n"
-    p3["shape"] = f"sphere"
+    p3["shape"] = f"sphere_rectangle"
+    p3["shape"] = f"rounded_rectangle"
     p3["radius"] = radius_tsp
+    wid = radius_tsp*2 + len_tsp
+    hei = radius_tsp*2
+    dep = radius_tsp*2 # /2
+    size = [wid, hei, dep]
+    p3["size"] = size
     p3["m"] = "#"
     pos1 = copy.deepcopy(pos)
-    pos1[0] += 38.4
-    pos1[2] += +depth
+    pos1[0] += (len_tsp+radius_tsp*2)/2 + shift_scoop_out
+    pos1[2] += depth_bottom
     p3["pos"] = pos1
     oobb_base.append_full(thing,**p3)
+
+    
+    
+
+
 
     #add tbsp sphere
     p3 = copy.deepcopy(kwargs)
     p3["type"] = "n"
-    p3["shape"] = f"sphere_rectangle"
+    p3["shape"] = f"sphere_rectangle"    
     #p3["shape"] = f"rounded_rectangle"
-    p3["radius"] = radius_tsp
-    wid = radius_tsp*2 + 28.3
-    hei = radius_tsp*2
-    dep = radius_tsp*2  
+    p3["radius"] = radius_tbsp
+    wid = radius_tbsp*2 + len_tbsp
+    hei = radius_tbsp*2
+    dep = radius_tbsp*2 # /2
     size = [wid, hei, dep]
     p3["size"] = size
     p3["m"] = "#"
     pos1 = copy.deepcopy(pos)
-    pos1[0] += -24.25
-    pos1[2] += 0
+    pos1[0] += -(len_tbsp+radius_tbsp*2)/2 - shift_scoop_out
+    pos1[2] += depth_bottom
     p3["pos"] = pos1
     oobb_base.append_full(thing,**p3)
 
@@ -147,7 +222,7 @@ def get_base(thing, **kwargs):
     p3["radius_name"] = "m6"
     p3["m"] = "#"
     pos1 = copy.deepcopy(pos)
-    pos1[0] += 15
+    pos1[0] += 0
     
     p3["pos"] = pos1
     oobb_base.append_full(thing,**p3)

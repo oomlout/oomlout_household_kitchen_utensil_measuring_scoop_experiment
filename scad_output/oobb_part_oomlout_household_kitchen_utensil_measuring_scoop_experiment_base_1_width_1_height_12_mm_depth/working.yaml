@@ -23,38 +23,56 @@ thing:
   components:
   - - height: 1
       pos:
+      - -26.396618289628897
       - 0
       - 0
-      - 0
+      r: 12
       shape: rounded_rectangle
       size:
-      - 104
-      - 29
-      - 12
+      - 52.793236579257794
+      - 24
+      - 12.5
+      type: positive
+      width: 1
+  - - height: 1
+      pos:
+      - 8.100646595720988
+      - 0
+      - 0
+      r: 9
+      shape: rounded_rectangle
+      size:
+      - 56.20129319144198
+      - 18
+      - 9.5
       type: positive
       width: 1
   - - height: 1
       m: '#'
       pos:
-      - 38.4
+      - 20.10064659572099
       - 0
-      - 12
-      r: 10.6
-      shape: sphere
+      - 1.5
+      r: 8
+      shape: rounded_rectangle
+      size:
+      - 30.201293191441977
+      - 16
+      - 16
       type: negative
       width: 1
   - - height: 1
       m: '#'
       pos:
-      - -24.25
+      - -28.396618289628897
       - 0
-      - 0
-      r: 10.6
+      - 1.5
+      r: 11
       shape: sphere_rectangle
       size:
-      - 49.5
-      - 21.2
-      - 21.2
+      - 46.793236579257794
+      - 22
+      - 22
       type: negative
       width: 1
   - - h: 200
@@ -62,7 +80,7 @@ thing:
       inclusion: laser
       m: '#'
       pos: &id001
-      - 15
+      - 0
       - 0
       - -100.0
       r: 3.0
@@ -93,15 +111,34 @@ thing:
     - 3dpr
     overwrite: true
     pos:
+    - -26.396618289628897
     - 0
     - 0
-    - 0
+    radius: 12
     save_type: all
     shape: rounded_rectangle
     size:
-    - 104
-    - 29
-    - 12
+    - 52.793236579257794
+    - 24
+    - 12.5
+    thickness: 12
+    type: p
+    width: 1
+  - height: 1
+    modes:
+    - 3dpr
+    overwrite: true
+    pos:
+    - 8.100646595720988
+    - 0
+    - 0
+    radius: 9
+    save_type: all
+    shape: rounded_rectangle
+    size:
+    - 56.20129319144198
+    - 18
+    - 9.5
     thickness: 12
     type: p
     width: 1
@@ -111,12 +148,16 @@ thing:
     - 3dpr
     overwrite: true
     pos:
-    - 38.4
+    - 20.10064659572099
     - 0
-    - 12
-    radius: 10.6
+    - 1.5
+    radius: 8
     save_type: all
-    shape: sphere
+    shape: rounded_rectangle
+    size:
+    - 30.201293191441977
+    - 16
+    - 16
     thickness: 12
     type: n
     width: 1
@@ -126,16 +167,16 @@ thing:
     - 3dpr
     overwrite: true
     pos:
-    - -24.25
+    - -28.396618289628897
     - 0
-    - 0
-    radius: 10.6
+    - 1.5
+    radius: 11
     save_type: all
     shape: sphere_rectangle
     size:
-    - 49.5
-    - 21.2
-    - 21.2
+    - 46.793236579257794
+    - 22
+    - 22
     thickness: 12
     type: n
     width: 1
@@ -145,7 +186,7 @@ thing:
     - 3dpr
     overwrite: true
     pos:
-    - 15
+    - 0
     - 0
     - 0
     radius_name: m6
@@ -155,10 +196,11 @@ thing:
     type: n
     width: 1
   components_string:
-  - rounded_rectangle_shape_p_type_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_104_29_12_size
-  - sphere_shape_n_type_38.4_0_12_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_10.6_radius
-  - sphere_rectangle_shape_n_type_-24.25_0_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_10.6_radius_49.5_21.2_21.2_size
-  - oobb_hole_shape_n_type_m6_radius_name_15_0_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness
+  - rounded_rectangle_shape_p_type_-26.396618289628897_0_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_52.793236579257794_24_12.5_size_12_radius
+  - rounded_rectangle_shape_p_type_8.100646595720988_0_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_56.20129319144198_18_9.5_size_9_radius
+  - rounded_rectangle_shape_n_type_20.10064659572099_0_1.5_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_8_radius_30.201293191441977_16_16_size
+  - sphere_rectangle_shape_n_type_-28.396618289628897_0_1.5_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_11_radius_46.793236579257794_22_22_size
+  - oobb_hole_shape_n_type_m6_radius_name_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness
   description: oomlout household kitchen utensil measuring scoop experiment base 1x1x12
   description_extra: ''
   description_main: 1_width_1_height_12_mm_depth

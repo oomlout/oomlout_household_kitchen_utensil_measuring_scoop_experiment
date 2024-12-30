@@ -17,7 +17,7 @@ def make_scad(**kwargs):
         #filter = "test"
 
         kwargs["save_type"] = "none"
-        #kwargs["save_type"] = "all"
+        kwargs["save_type"] = "all"
         
         navigation = False
         #navigation = True    
@@ -43,15 +43,15 @@ def make_scad(**kwargs):
     if True:
 
         part_default = {} 
-        part_default["project_name"] = "test" ####### neeeds setting
+        part_default["project_name"] = "oomlout_household_kitchen_utensil_measuring_scoop_experiment" ####### neeeds setting
         part_default["full_shift"] = [0, 0, 0]
         part_default["full_rotations"] = [0, 0, 0]
         
         part = copy.deepcopy(part_default)
         p3 = copy.deepcopy(kwargs)
-        p3["width"] = 3
-        p3["height"] = 3
-        #p3["thickness"] = 6
+        p3["width"] = 1
+        p3["height"] = 1
+        p3["thickness"] = 12
         part["kwargs"] = p3
         part["name"] = "base"
         parts.append(part)
@@ -93,26 +93,61 @@ def get_base(thing, **kwargs):
     #pos = copy.deepcopy(pos)
     #pos[2] += -20
 
-    #add plate
+    #add base
     p3 = copy.deepcopy(kwargs)
     p3["type"] = "p"
-    p3["shape"] = f"oobb_plate"    
-    p3["depth"] = depth
+    p3["shape"] = f"rounded_rectangle"    
+    wid = 104
+    hei = 29
+    dep = 12
+    size = [wid, hei, dep]
+    p3["size"] = size
     #p3["holes"] = True         uncomment to include default holes
     #p3["m"] = "#"
     pos1 = copy.deepcopy(pos)         
     p3["pos"] = pos1
     oobb_base.append_full(thing,**p3)
     
-    #add holes seperate
+    radius_tsp = 10.6
+
+    #add tsp sphere
     p3 = copy.deepcopy(kwargs)
-    p3["type"] = "p"
-    p3["shape"] = f"oobb_holes"
-    p3["both_holes"] = True  
-    p3["depth"] = depth
-    p3["holes"] = "perimeter"
-    #p3["m"] = "#"
-    pos1 = copy.deepcopy(pos)         
+    p3["type"] = "n"
+    p3["shape"] = f"sphere"
+    p3["radius"] = radius_tsp
+    p3["m"] = "#"
+    pos1 = copy.deepcopy(pos)
+    pos1[0] += 38.4
+    p3["pos"] = pos1
+    oobb_base.append_full(thing,**p3)
+
+    #add tbsp sphere
+    p3 = copy.deepcopy(kwargs)
+    p3["type"] = "n"
+    p3["shape"] = f"sphere_rectangle"
+    #p3["shape"] = f"rounded_rectangle"
+    p3["radius"] = radius_tsp
+    wid = radius_tsp*2 + 28.3
+    hei = radius_tsp*2
+    dep = radius_tsp*2  
+    size = [wid, hei, dep]
+    p3["size"] = size
+    p3["m"] = "#"
+    pos1 = copy.deepcopy(pos)
+    pos1[0] += -24.25
+    pos1[2] += -depth
+    p3["pos"] = pos1
+    oobb_base.append_full(thing,**p3)
+
+    #add m6 hole
+    p3 = copy.deepcopy(kwargs)
+    p3["type"] = "n"
+    p3["shape"] = f"oobb_hole"
+    p3["radius_name"] = "m6"
+    p3["m"] = "#"
+    pos1 = copy.deepcopy(pos)
+    pos1[0] += 15
+    
     p3["pos"] = pos1
     oobb_base.append_full(thing,**p3)
 

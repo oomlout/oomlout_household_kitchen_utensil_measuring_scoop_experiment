@@ -40,7 +40,7 @@ parts:
           pos:
           - 38.4
           - 0
-          - 0
+          - 12
           r: 10.6
           shape: sphere
           type: negative
@@ -50,7 +50,7 @@ parts:
           pos:
           - -24.25
           - 0
-          - -12
+          - 0
           r: 10.6
           shape: sphere_rectangle
           size:
@@ -115,7 +115,7 @@ parts:
         pos:
         - 38.4
         - 0
-        - 0
+        - 12
         radius: 10.6
         save_type: all
         shape: sphere
@@ -130,7 +130,7 @@ parts:
         pos:
         - -24.25
         - 0
-        - -12
+        - 0
         radius: 10.6
         save_type: all
         shape: sphere_rectangle
@@ -158,8 +158,8 @@ parts:
         width: 1
       components_string:
       - rounded_rectangle_shape_p_type_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_104_29_12_size
-      - sphere_shape_n_type_38.4_0_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_10.6_radius
-      - sphere_rectangle_shape_n_type_-24.25_0_-12_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_10.6_radius_49.5_21.2_21.2_size
+      - sphere_shape_n_type_38.4_0_12_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_10.6_radius
+      - sphere_rectangle_shape_n_type_-24.25_0_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_10.6_radius_49.5_21.2_21.2_size
       - oobb_hole_shape_n_type_m6_radius_name_15_0_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness
       description: oomlout household kitchen utensil measuring scoop experiment base
         1x1x12

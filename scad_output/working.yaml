@@ -1,0 +1,186 @@
+parts:
+  oobb_part_oomlout_household_kitchen_utensil_measuring_scoop_experiment_base_1_width_1_height_12_mm_depth:
+    full_rotations:
+    - 0
+    - 0
+    - 0
+    full_shift:
+    - 0
+    - 0
+    - 0
+    id: oobb_part_oomlout_household_kitchen_utensil_measuring_scoop_experiment_base_1_width_1_height_12_mm_depth
+    kwargs:
+      height: 1
+      modes:
+      - 3dpr
+      overwrite: true
+      thickness: 12
+      type: oomlout_household_kitchen_utensil_measuring_scoop_experiment_base
+      width: 1
+    name: base
+    project_name: C:\gh\oomlout_household_kitchen_utensil_measuring_scoop_experiment
+    thing:
+      classification: oobb
+      color: ''
+      components:
+      - - height: 1
+          pos:
+          - 0
+          - 0
+          - 0
+          shape: rounded_rectangle
+          size:
+          - 104
+          - 29
+          - 12
+          type: positive
+          width: 1
+      - - height: 1
+          m: '#'
+          pos:
+          - 38.4
+          - 0
+          - 0
+          r: 10.6
+          shape: sphere
+          type: negative
+          width: 1
+      - - height: 1
+          m: '#'
+          pos:
+          - -24.25
+          - 0
+          - -12
+          r: 10.6
+          shape: sphere_rectangle
+          size:
+          - 49.5
+          - 21.2
+          - 21.2
+          type: negative
+          width: 1
+      - - h: 200
+          height: 1
+          inclusion: laser
+          m: '#'
+          pos: &id001
+          - 15
+          - 0
+          - -100.0
+          r: 3.0
+          shape: cylinder
+          type: negative
+          width: 1
+        - h: 200
+          height: 1
+          inclusion: 3dpr
+          m: '#'
+          pos: *id001
+          r: 3.25
+          shape: cylinder
+          type: negative
+          width: 1
+        - h: 200
+          height: 1
+          inclusion: 'true'
+          m: '#'
+          pos: *id001
+          r: 3.0
+          shape: cylinder
+          type: negative
+          width: 1
+      components_objects:
+      - height: 1
+        modes:
+        - 3dpr
+        overwrite: true
+        pos:
+        - 0
+        - 0
+        - 0
+        save_type: all
+        shape: rounded_rectangle
+        size:
+        - 104
+        - 29
+        - 12
+        thickness: 12
+        type: p
+        width: 1
+      - height: 1
+        m: '#'
+        modes:
+        - 3dpr
+        overwrite: true
+        pos:
+        - 38.4
+        - 0
+        - 0
+        radius: 10.6
+        save_type: all
+        shape: sphere
+        thickness: 12
+        type: n
+        width: 1
+      - height: 1
+        m: '#'
+        modes:
+        - 3dpr
+        overwrite: true
+        pos:
+        - -24.25
+        - 0
+        - -12
+        radius: 10.6
+        save_type: all
+        shape: sphere_rectangle
+        size:
+        - 49.5
+        - 21.2
+        - 21.2
+        thickness: 12
+        type: n
+        width: 1
+      - height: 1
+        m: '#'
+        modes:
+        - 3dpr
+        overwrite: true
+        pos:
+        - 15
+        - 0
+        - 0
+        radius_name: m6
+        save_type: all
+        shape: oobb_hole
+        thickness: 12
+        type: n
+        width: 1
+      components_string:
+      - rounded_rectangle_shape_p_type_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_104_29_12_size
+      - sphere_shape_n_type_38.4_0_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_10.6_radius
+      - sphere_rectangle_shape_n_type_-24.25_0_-12_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness_10.6_radius_49.5_21.2_21.2_size
+      - oobb_hole_shape_n_type_m6_radius_name_15_0_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_12_thickness
+      description: oomlout household kitchen utensil measuring scoop experiment base
+        1x1x12
+      description_extra: ''
+      description_main: 1_width_1_height_12_mm_depth
+      folder: C:\gh\oomlout_oobb_version_4_generated_parts\things\oobb_part_oomlout_household_kitchen_utensil_measuring_scoop_experiment_base_1_width_1_height_12_mm_depth
+      height: 1
+      height_mm: 14
+      id: oobb_part_oomlout_household_kitchen_utensil_measuring_scoop_experiment_base_1_width_1_height_12_mm_depth
+      manufacturer: ''
+      name: Oobb Part Oomlout Household Kitchen Utensil Measuring Scoop Experiment
+        Base 1 Width 1 Height 12 mm Depth
+      name_short: Oomlout Household Kitchen Utensil
+      part_number: ''
+      short_name: ''
+      size: oomlout_household_kitchen_utensil_measuring_scoop_experiment_base
+      thickness: 12
+      thickness_mm: 12
+      type: part
+      width: 1
+      width_mm: 14
+project_id: oomlout_household_kitchen_utensil_measuring_scoop_experiment
+project_name: Oomlout household kitchen utensil measuring scoop experiment
+project_repo: https://github.com/oomlout/oomlout_household_kitchen_utensil_measuring_scoop_experiment

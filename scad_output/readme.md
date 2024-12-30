@@ -1,0 +1,9 @@
+# Oomlout household kitchen utensil measuring scoop experiment
+
+
+## parts
+
+### oobb_part_oomlout_household_kitchen_utensil_measuring_scoop_experiment_base_1_width_1_height_12_mm_depth
+* link: [/oobb_part_oomlout_household_kitchen_utensil_measuring_scoop_experiment_base_1_width_1_height_12_mm_depth](oobb_part_oomlout_household_kitchen_utensil_measuring_scoop_experiment_base_1_width_1_height_12_mm_depth)  
+![](oobb_part_oomlout_household_kitchen_utensil_measuring_scoop_experiment_base_1_width_1_height_12_mm_depth/3dpr_300.png)  ![](oobb_part_oomlout_household_kitchen_utensil_measuring_scoop_experiment_base_1_width_1_height_12_mm_depth/image_300.jpg)
+ 
